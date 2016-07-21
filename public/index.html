@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mandelbrot</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--designe-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="includes/style.css">
+    <!--functionality-->
+    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="includes/script.js"></script>
+    <script>
+        <%= startData %>;
+    </script>
+</head>
+<body>
+<div id="wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+					    <h4 class="page-header" id="image-params">Mandelbrot</h4>
+							<!--Form -->
+							<div id="formGetPic">
+								<form class="form" action="#" method="get" id="get">
+									<fieldset>
+										<h3>Params For Pic:</h3>
+										<label for="name">Num of iterations:</label>
+										<input type="number" id="iterations" name="iterations" placeholder="number of iterations"/>
+										<br/>
+										<label for="name">X value:</label>
+										<input type="number" id="X" name="X" placeholder="number of frags required for x axis"/>
+										<br/>
+										<label for="name">Y value:</label>
+										<input type="number" id="Y" name="Y" placeholder="number of frags required for y axis"/>
+										<br/>
+										<br/>
+										<input type="submit" id="getPic" value="GET"/>
+										<br/>
+									</fieldset>
+								</form>
+							</div>
+							<div class="buttons center">
+								<i id="back" class="material-icons" style="font-size:60px;color:green;">arrow_back</i>
+								<i id="forward" class="material-icons" style="font-size:60px;color:green;">arrow_forward</i>
+								<i id="up" class="material-icons" style="font-size:60px;color:green;">arrow_upward</i>
+								<i id="down" class="material-icons" style="font-size:60px;color:green;">arrow_downward</i>
+
+								<i id="zoomin" class="material-icons" style="font-size:60px;color:black;">zoom_in</i>
+								<i id="zoomout" class="material-icons" style="font-size:60px;color:black;">zoom_out</i>
+							</div>
+							<div class="center">
+							<img id="mandelbrot" src="#" width="100%" height="400px"/>
+							</div>
+							<br/>
+					</div>
+                </div>
+     </div>
+ </div>
+        <hr>
+        <!-- Footer -->
+        <footer>
+                <p>Copyright &copy; <a href="#">Rotem&Atalia </a></p>
+        </footer>
+ 
+<script>
+    (function () {
+        //	create();
+    })();
+</script>
+</body>
+</html>
+
