@@ -58,9 +58,9 @@ var sx = 0, ex = 1, sy = 2, ey = 3, iter = 4, w = 5, h = 6;
 	 vars[ex] = 1;
 	 vars[sy]= -1;
 	 vars[ey] = 1;
-	 vars[iter]= iterations;
-	 vars[w] = width;
-	 vars[h] = height;
+	 vars[iter]= 200;
+	 vars[w] = 500;
+	 vars[h] = 500;
 	 updateImage();
 
 	 $('#back').click(function (e) {
