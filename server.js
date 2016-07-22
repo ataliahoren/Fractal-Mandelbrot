@@ -1,6 +1,6 @@
 // call the packages we need
 // Dependencies
-var PORT = 8080;
+var PORT = 80;
 var PNG = require('node-png').PNG,
 	fs = require('fs'),
 	http = require('http'),
