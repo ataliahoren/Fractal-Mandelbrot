@@ -1,55 +1,3 @@
-/*
- $(function () {
-	 
-	//get params from form
-	var sx = $('#X');
-	var sy = $('#Y');
-	var iter = $('#iterations');
-	var ex = -1;
-	var ey = -1;
-	var width = 0;
-	var height = 0;
-	
-	//user pressd Get button
-    $('#getPic').click(function (e) {
-        e.preventDefault();	
-		
-		//url for get request
-		var $fullUrl = '/api/server/' +sx.val()+ '/' +ex+ '/' +sy.val()+ '/' +ey+ '/' +iter.val()+ '/' +width+ '/' +height
-		console.log($fullUrl)
-		
-		//validation - make sure user typed all fields
-		if ((!sx.val()) || (!sy.val()) || (!iter.val()))
-		{
-			alert('please fill in all fields');
-			return false;
-		}
-	
-		//validation-ok, get the pic
-        else
-		{
-			//get pic
-			$.ajax({
-				type: 'GET',
-				url: $fullUrl,
-				success: function () {
-					alert('success getting pic');
-				},
-				error: function () {
-					alert('error getting pic');
-				}
-			});
-		}
-	});
-	
-	//if user pressed zoom-in or out
-
-	//if user cliked on reset button
-	$('#reset').click(function (e) {
-		
-	});
-});
-*/
 var vars = [];
 var sx = 0, ex = 1, sy = 2, ey = 3, iter = 4, w = 5, h = 6;
 
@@ -62,6 +10,29 @@ var sx = 0, ex = 1, sy = 2, ey = 3, iter = 4, w = 5, h = 6;
 	 vars[w] = 500;
 	 vars[h] = 500;
 	 updateImage();
+	 
+	//get params from form
+	var sxForm = $('#xParts');
+	var syForm = $('#yParts');
+	var iterForm = $('#iterations');
+	 
+	//user pressd Get button
+    $('#getPic').click(function (e) {
+        e.preventDefault();			
+		if ((!sxForm.val()) || (!syForm.val()) || (!iterForm.val()))
+		{
+			alert('please fill in all fields');
+			return false;
+		}
+		else 
+		{
+			vars[iter]= iterForm.val();
+			vars[w] = syForm.val();
+			vars[h] = sxForm.val();
+			updateImage();		
+			console.log("im done");
+		}
+	});
 
 	 $('#back').click(function (e) {
 		 vars[sx] -= 0.1*(vars[ex] - vars[sx]);
@@ -105,28 +76,7 @@ var sx = 0, ex = 1, sy = 2, ey = 3, iter = 4, w = 5, h = 6;
 		 vars[ey] += 0.1*(vars[ey] - vars[sy]);
 		 updateImage();
 	 });
- });
-
- 
-//form validation
- $(function () {
-	 
-	//get params from form
-	var sx = $('#xParts');
-	var sy = $('#yParts');
-	var iter = $('#iterations');
-	
-	//user pressd Get button
-    $('#getPic').click(function (e) {
-        e.preventDefault();			
-		if ((!sx.val()) || (!sy.val()) || (!iter.val()))
-		{
-			alert('please fill in all fields');
-			return false;
-		}
-	});
-
-});
+ }); 
 
 function genUri(){
 	return '/' + vars.join('/');
